@@ -41,7 +41,7 @@ function popData(fLat, fLon){
         var country = data.sys.country;
         gTemp = temp; //just returning the temp to the global variable
           
-        document.getElementById("tempId").innerHTML = temp + "°C"; //celcius by default
+        document.getElementById("tempId").innerHTML = Math.round(temp) + "°C"; //celcius by default
         document.getElementById("weatherImgId").setAttribute("src", iconUrl);
         document.getElementById("weatherDes").innerHTML = weatherDescription;
         document.getElementById("locationId").innerHTML = location +", "+ country;
@@ -65,14 +65,14 @@ function tempConversion(temp, currentStan)
 {
     if (currentStan == 'c')
     {
-        var f = (temp * 9/5) + 32;
+        var f = Math.round((temp * 9/5) + 32);
         document.getElementById('tempId').innerHTML = f + "°F";
         currentTempStan = 'f'; //set the temp standard to f
         gTemp = f; //change the global value for temp to equal the new temp in this measurment
     }
     else if(currentStan == 'f')
     {
-        var c = (temp - 32) * 5/9;
+        var c = Math.round((temp - 32) * 5/9);
         document.getElementById('tempId').innerHTML = c + "°C";
         currentTempStan = 'c';
         gTemp = c;
