@@ -10,6 +10,12 @@ var geo_options = {
   timeout           : 27000
 };
 
+function errorCallback ()
+{
+    alert("Your geolocation is currently disabled or not working. Here is the weather in (sunny?) South Africa");
+    popData(-25.765, 28.2169);
+}
+
 function getLocation(callback) 
 {
 	if (navigator.geolocation) 
@@ -17,12 +23,13 @@ function getLocation(callback)
         navigator.geolocation.getCurrentPosition(function(position)
         	{
             	callback(position.coords.latitude, position.coords.longitude)
-        	}, function (){ alert("error");},geo_options);
+        	}, errorCallback, geo_options);
     } 
     else 
     {
         //we could return unkown - or we could return a default value to the callback method     
         //return "Unknown";
+        //is this redundant?
         callback(-25.765, 28.2169);
     }
 }
