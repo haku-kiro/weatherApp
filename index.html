@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="topBar">
+            <p id=tempId></p>
+            <img src="" id="weatherImgId" alt="There is supposed to be a picture of the weather here :/">
+        </div>
+        <div id="bottomBar">
+            <p id="weatherDes"></p>
+            <p id="locationId"></p>
+            <br/>
+            <div id="btnDiv">
+                <button onclick="tempConversion(gTemp, currentTempStan)" class="button">Convert temp</button>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
