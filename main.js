@@ -17,7 +17,7 @@ function getLocation(callback)
         navigator.geolocation.getCurrentPosition(function(position)
         	{
             	callback(position.coords.latitude, position.coords.longitude)
-        	}, geo_options);
+        	}, function (){ alert("error");},geo_options);
     } 
     else 
     {
