@@ -4,6 +4,12 @@
 var currentTempStan = 'c';
 var gTemp;
 
+var geo_options = {
+  enableHighAccuracy: true, 
+  maximumAge        : 30000, 
+  timeout           : 27000
+};
+
 function getLocation(callback) 
 {
 	if (navigator.geolocation) 
@@ -11,7 +17,7 @@ function getLocation(callback)
         navigator.geolocation.getCurrentPosition(function(position)
         	{
             	callback(position.coords.latitude, position.coords.longitude)
-        	});
+        	}, geo_options);
     } 
     else 
     {
